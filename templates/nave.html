@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{%extends 'base.html'%}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-      <link rel="icon" href="{{url_for('static', filename='images/logo.jpeg')}}" type="image/x-icon">
-      <script type="text/javascript" src="{{url_for('static', filename='js/script.js')}}"></script>
-
-    {% block head %}
-    {% endblock %}
-</head>
-
-<body>
-  <header class="header">
+{%block navebar%}
+<header class="header">
     <a href="#" class="logo">
         <img src="{{url_for('static', filename = 'images/logo.jpeg') }}" alt="logo">
     </a>
@@ -38,9 +25,4 @@
 
     <!-- <a class="btn btn-outline-primary" href="/logout">Logout</a> -->
 </header>
-    {% block body %}
-    
-    {% endblock %}
-</body>
-
-</html>
+{%endblock%}

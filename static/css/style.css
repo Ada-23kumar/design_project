@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root {
+    --primary-color: #118de1;
+    --scolor: #e0d469;
+    --bg: #151414;
+    --border: .1rem solid rgba(50, 221, 218, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size:62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background: #130303;
+    border-radius: 5rem;
+}
+
+body{
+    background: var(--bg);
+}
+
+section{
+    padding: 2rem;
+}
+
+
+/* navbar seaction start */
+.header{
+    background: var(--scolor);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .8rem 7%;
+    /* border-bottom: var(--border); */
+    box-shadow: 0 4px 8px rgba(242, 212, 123, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+}
+
+
+.icons div{
+    /* display: flexbox;           */
+    align-items: center;   
+    display: inline-flex;    /* Ensure each icon is inline */
+    color: #0f0d0d;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+#menu-btn{
+    display: none;
+}
+
+
+.header .icons div:hover {
+    color: var(--primary-color);
+}
+
+.header .logo img {
+    width: 10rem;
+    height: 7rem;
+    object-fit: cover;
+}
+
+.header .navbar {
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-right: 4%;
+    padding-left: 4%;
+    background-color: rgb(249, 244, 184);
+    border-radius: 2rem;
+    box-shadow: 0 6px 10px rgba(119, 117, 111, 0.733)
+
+}
+
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color:#0f0202;
+}
+
+.header .navbar a:hover {
+    color: var(--primary-color);
+    border-bottom: .1rem solid var(--primary-color);
+    border-top: .1rem solid var(--primary-color);
+
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+}
+/* navbar section end */
+
+/* home section is start */
+
+section.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 7%;
+    background-color: var(--bg);
+    color: #fff;
+}
+
+section.home .text {
+    width: 50%;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: #fff;
+}
+
+section.home .text h2 {
+    font-size: 3.6rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+section.home .text abbr {
+    text-decoration: none;
+    border-bottom: 1px dotted var(--primary-color);
+    cursor: help;
+}
+
+section.home .img {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.home .img img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: var(--border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section.home .img img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media Queries */
+
+@media (max-width:991px) {
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 1.5rem, 2rem;
+    }
+    section{
+        padding: 2rem;
+    }
+}
+
+@media (max-width:991px) {
+    #menu-btn{
+        display: inline-block;
+        cursor: pointer;
+        /* height: 100px; */
+        
+    }
+    .header .navbar{
+        position: absolute;
+        border-radius: 0%;
+        top: 100%; 
+        right: -100%;
+        background: var(--scolor);
+        width: 30rem;
+        /* height: calc(100vh - 9.5rem); */
+        transition: right 0.3s else;
+    }
+    .header .navbar.active{
+        right:0;
+    }
+
+    .header .navbar a{
+        color: var(--black);
+        display: block;
+        margin: 1.5rem;
+        padding: 4rem;
+        font-size: 2rem;
+    }
+}
+
+
+
+
+@media screen and (max-width: 480px) {
+    section.home .text h2 {
+        font-size: 2.8rem;
+    }
+
+    section.home .text {
+        font-size: 1.6rem;
+    }
+
+    section.home .img img {
+        width: 150px;
+        height: 150px;
+    }
+}
