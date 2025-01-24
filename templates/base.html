@@ -13,31 +13,7 @@
     {% endblock %}
 </head>
 
-<body>
-  <header class="header">
-    <a href="#" class="logo">
-        <img src="{{url_for('static', filename = 'images/logo.jpeg') }}" alt="logo">
-    </a>
-    <nev class="navbar">
-        <a href="#home">home</a>
-        <a href="#about">how it works</a>
-        <a href="#whyus">why us?</a>
-        <a href="/ScrapRate">Scrap Rate</a>
-
-    </nev>
-    <div class="icons">
-        
-        <div class="fas fa-bars" id="menu-btn"></div>
-        
-        <!-- <a href="sign_in.html" class="fas fa-sign-out" id="sign-out"></a> -->
-        <div class="sign">
-            <a href="/sign_in" class="fas fa-sign-in" id="sign_in">
-            </a>
-        </div>
-    </div>
-
-    <!-- <a class="btn btn-outline-primary" href="/logout">Logout</a> -->
-</header>
+    {% include 'nave.html' %}
     {% block body %}
     
     {% endblock %}
